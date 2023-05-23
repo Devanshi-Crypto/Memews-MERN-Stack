@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin Page</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+
+        .admin-profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .profile-details {
+            margin-bottom: 20px;
+        }
+
+        .admin-actions form,
+        .admin-actions a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .admin-actions h2 {
+            margin-bottom: 10px;
+        }
+
+        .admin-actions input[type="file"],
+        .admin-actions input[type="text"],
+        .admin-actions textarea {
+            padding: 5px;
+            width: 200px;
+        }
+
+        .admin-actions button[type="submit"] {
+            padding: 5px 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        .admin-actions button[type="submit"]:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-profile">
+        <div class="content">
+            <h1>Admin Profile</h1>
+            <div class="profile-details">
+                <p>Email: <%= adminData.email %>
+                </p>
+                <p>Role: Admin</p>
+            </div>
+            <div class="admin-actions">
+                <form action="/add-meme" method="POST" enctype="multipart/form-data">
+                    <h2>Add Meme</h2>
+                    <div>
+                        <label for="memeImage">Meme Image:</label>
+                        <input type="file" id="memeImage" name="memeImage" accept=".jpg, .jpeg, .png" required>
+                    </div>
+                    <div>
+                        <label for="memeLink">Meme Link:</label>
+                        <input type="text" id="memeLink" name="memeLink" placeholder="Enter link" required>
+                    </div>
+                    <div>
+                        <label for="memeDescription">Meme Description:</label>
+                        <textarea id="memeDescription" name="memeDescription" rows="3" placeholder="Enter description"
+                            required></textarea>
+                    </div>
+                    <button type="submit">Add Meme</button>
+                </form>
+                <a href="/add-news">Add News</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            padding: 5px;
+            width: 200px;
+        }
+
+        button[type="submit"] {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // Function to highlight the input field on focus
+        function highlightInput(elementId) {
+            const input = document.getElementById(elementId);
+            input.style.borderColor = "#4CAF50";
+        }
+
+        // Function to remove the highlight from the input field
+        function removeHighlight(elementId) {
+            const input = document.getElementById(elementId);
+            input.style.borderColor = "";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form method="POST" action="/login">
+        <form action="/admin/login" method="POST">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+
+    </form>
+    <p>Don't have an account? <a href="/register">Register here</a></p>
+</body>
+
+</html>

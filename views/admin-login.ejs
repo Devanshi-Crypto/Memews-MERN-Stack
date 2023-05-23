@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin Login</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            padding: 5px;
+            width: 200px;
+        }
+
+        button[type="submit"] {
+            padding: 5px 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #eee;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // Function to highlight the input field on focus
+        function highlightInput(elementId) {
+            const input = document.getElementById(elementId);
+            input.style.borderColor = "white";
+        }
+
+        // Function to remove the highlight from the input field
+        function removeHighlight(elementId) {
+            const input = document.getElementById(elementId);
+            input.style.borderColor = "";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Admin Login</h1>
+    <form method="POST" action="/admin-login">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required onfocus="highlightInput('email')"
+                onblur="removeHighlight('email')">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required onfocus="highlightInput('password')"
+                onblur="removeHighlight('password')">
+        </div>
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <p>Don't have an account? <a href="/admin-register">Register here</a></p>
+</body>
+
+</html>

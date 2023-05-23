@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Memews - Pols</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Memews Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Tech</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Edu</a></li>
+            <li><a href="#">Pol</a></li>
+            <li><a href="#">User Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="container">
+        <h1>Pols</h1>
+        <div class="content">
+            <% polsArticles.forEach(function(article) { %>
+                <div class="article">
+                    <div class="image">
+                        <img src="<%= article.image %>" alt="<%= article.title %>">
+                    </div>
+                    <div class="details">
+                        <h2><a href="<%= article.link %>">
+                                <%= article.title %>
+                            </a></h2>
+                        <p>
+                            <%= article.description %>
+                        </p>
+                        <a href="<%= article.link %>">Read More</a>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Memews. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
